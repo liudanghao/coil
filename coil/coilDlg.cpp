@@ -185,7 +185,7 @@ void CcoilDlg::OnBnClickedCalc()
 	double resister= total_len * 1.75e-5 / (3.1415926 * m_WireDiameter * m_WireDiameter / 4);
 
 	CString str;
-	str.Format(_T("总匝数: %f\n电阻: %f"), turns,resister);
+	str.Format(_T("总匝数: %.1f\n电阻: %.1f"), turns,resister);
 
 	this->GetDlgItem(IDC_RESULT)->SetWindowTextW(str);
 }
