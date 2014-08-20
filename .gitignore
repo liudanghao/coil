@@ -3,6 +3,11 @@
 *.lo
 *.o
 *.obj
+*.pdb
+*.suo
+*.user
+*.aps
+
 
 # Compiled Dynamic libraries
 *.so
@@ -16,6 +21,5 @@
 *.lib
 
 # Executables
-*.exe
 *.out
 *.app

@@ -38,6 +38,11 @@ public:
 	double m_InsideDiameter;
 	double m_OutsideDiameter;
 	double m_WireDiameter;
-	afx_msg void OnStnClickedResult();
+//	afx_msg void OnStnClickedResult();
 	double m_PaintDiameter;
+	afx_msg void OnEnChangeEditOutsideDiameter();
+	afx_msg void OnEnChangeEditInsideDiameter();
+	afx_msg void OnEnChangeEditHeight();
+	afx_msg void OnEnChangeEditWireDiameter();
+	afx_msg void OnEnChangeEditPaintDiameter();
 };

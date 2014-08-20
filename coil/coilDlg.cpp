@@ -67,15 +67,15 @@ void CcoilDlg::DoDataExchange(CDataExchange* pDX)
 	//  DDX_Control(pDX, IDC_EDIT_LENGTH, m_Length);
 	//  DDX_Control(pDX, IDC_EDIT_LINE_D, m_LineD);
 	DDX_Text(pDX, IDC_EDIT_HEIGHT, m_Height);
-	DDV_MinMaxDouble(pDX, m_Height, 1, 1000);
+//	DDV_MinMaxDouble(pDX, m_Height, 1, 1000);
 	DDX_Text(pDX, IDC_EDIT_INSIDE_DIAMETER, m_InsideDiameter);
-	DDV_MinMaxDouble(pDX, m_InsideDiameter, 1, 1000);
+//	DDV_MinMaxDouble(pDX, m_InsideDiameter, 1, 1000);
 	DDX_Text(pDX, IDC_EDIT_OUTSIDE_DIAMETER, m_OutsideDiameter);
-	DDV_MinMaxDouble(pDX, m_OutsideDiameter, 2, 1000);
+//	DDV_MinMaxDouble(pDX, m_OutsideDiameter, 2, 1000);
 	DDX_Text(pDX, IDC_EDIT_WIRE_DIAMETER, m_WireDiameter);
-	DDV_MinMaxDouble(pDX, m_WireDiameter, 0.01, 10);
+//	DDV_MinMaxDouble(pDX, m_WireDiameter, 0.01, 10);
 	DDX_Text(pDX, IDC_EDIT_PAINT_DIAMETER, m_PaintDiameter);
-	DDV_MinMaxDouble(pDX, m_PaintDiameter, 0.02, 10);
+//	DDV_MinMaxDouble(pDX, m_PaintDiameter, 0.02, 10);
 }
 
 BEGIN_MESSAGE_MAP(CcoilDlg, CDialogEx)
@@ -83,7 +83,12 @@ BEGIN_MESSAGE_MAP(CcoilDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_CALC, &CcoilDlg::OnBnClickedCalc)
-	ON_STN_CLICKED(IDC_RESULT, &CcoilDlg::OnStnClickedResult)
+//	ON_STN_CLICKED(IDC_RESULT, &CcoilDlg::OnStnClickedResult)
+ON_EN_CHANGE(IDC_EDIT_OUTSIDE_DIAMETER, &CcoilDlg::OnEnChangeEditOutsideDiameter)
+ON_EN_CHANGE(IDC_EDIT_INSIDE_DIAMETER, &CcoilDlg::OnEnChangeEditInsideDiameter)
+ON_EN_CHANGE(IDC_EDIT_HEIGHT, &CcoilDlg::OnEnChangeEditHeight)
+ON_EN_CHANGE(IDC_EDIT_WIRE_DIAMETER, &CcoilDlg::OnEnChangeEditWireDiameter)
+ON_EN_CHANGE(IDC_EDIT_PAINT_DIAMETER, &CcoilDlg::OnEnChangeEditPaintDiameter)
 END_MESSAGE_MAP()
 
 
@@ -191,7 +196,72 @@ void CcoilDlg::OnBnClickedCalc()
 }
 
 
-void CcoilDlg::OnStnClickedResult()
+//void CcoilDlg::OnStnClickedResult()
+//{
+//	// TODO: 在此添加控件通知处理程序代码
+//}
+
+
+void CcoilDlg::OnEnChangeEditOutsideDiameter()
 {
-	// TODO: 在此添加控件通知处理程序代码
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+	UpdateData();
+	OnBnClickedCalc();
+}
+
+
+void CcoilDlg::OnEnChangeEditInsideDiameter()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+	UpdateData();
+	OnBnClickedCalc();
+}
+
+
+void CcoilDlg::OnEnChangeEditHeight()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+		UpdateData();
+	OnBnClickedCalc();
+}
+
+
+void CcoilDlg::OnEnChangeEditWireDiameter()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+	UpdateData();
+	OnBnClickedCalc();
+}
+
+
+void CcoilDlg::OnEnChangeEditPaintDiameter()
+{
+	// TODO:  如果该控件是 RICHEDIT 控件，它将不
+	// 发送此通知，除非重写 CDialogEx::OnInitDialog()
+	// 函数并调用 CRichEditCtrl().SetEventMask()，
+	// 同时将 ENM_CHANGE 标志“或”运算到掩码中。
+
+	// TODO:  在此添加控件通知处理程序代码
+		UpdateData();
+	OnBnClickedCalc();
 }
